@@ -9,9 +9,12 @@ services:
       MYSQL_DATABASE: imobiliaria
       MYSQL_USER: user
       MYSQL_PASSWORD: user
-      ports: "3306:3306"
-      volumes: mysql_data:/var/lib/mysql
-      networks: imobiliaria_network
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - imobiliaria_network
 
 volumes:
   mysql_data:

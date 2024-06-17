@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
+
     @Autowired
     private ClienteService service;
 
     @PostMapping()
-    public ResponseEntity<Cliente> create(@RequestBody @Valid ClienteDTO dto) {
-
-        return null;
+    public ResponseEntity<ClienteDTO> create(@RequestBody @Valid ClienteDTO dto) {
+        return ResponseEntity.ok().body(service.create(dto));
     }
 }

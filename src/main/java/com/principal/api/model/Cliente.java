@@ -1,5 +1,6 @@
 package com.principal.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.principal.api.model.DTO.ClienteDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -37,6 +38,7 @@ public class Cliente {
     private String email;
 
     @NotBlank
+//    @JsonIgnore
     private String senha;
 
     public Cliente(Long id, String nome, String data_nascimento, String cpf, String email, String senha) {
@@ -54,5 +56,6 @@ public class Cliente {
         this.cpf = dto.cpf();
         this.email = dto.email();
         this.senha = dto.senha();
+        this.salario = dto.salario();
     }
 }
